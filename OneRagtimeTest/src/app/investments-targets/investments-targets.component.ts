@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import * as echarts from 'echarts';
 import { Investment } from 'src/models/Investment';
 
-
 @Component({
   selector: 'app-investments-targets',
   templateUrl: './investments-targets.component.html',
@@ -11,10 +10,12 @@ import { Investment } from 'src/models/Investment';
 export class InvestmentsTargetsComponent implements OnInit {
 
   public investmentsData: Investment[]
+  public title: string;
 
   constructor() { }
 
   ngOnInit(): void {
+    this.title = "Investments Targets Graph"
 
     this.investmentsData = [
       {
@@ -108,5 +109,10 @@ export class InvestmentsTargetsComponent implements OnInit {
 
   private getColorAmount(amount: number): string {
     return amount >= 0 ? 'blue' : 'green'
+  }
+
+  public toogleSection(event: any): void {
+    const section: HTMLElement = event['target']['parentElement']['parentElement']
+    section.classList.toggle('report-section--minified')
   }
 }

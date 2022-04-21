@@ -1,1 +1,60 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+    background-color:aliceblue;
+}
+
+h1 {
+margin: 8px 0;
+}
+
+.toolbar {
+height: 100px;
+color: rgb(0, 0, 0);
+font-weight: 600;
+display: flex;
+align-items: center;
+flex-wrap: wrap;
+}
+
+.toolbar img {
+margin: 0 16px;
+width: 300px;
+}
+
+.contentWeb {
+display: flex;
+margin: 80px auto 30px;
+padding: 10px 20px;
+flex-direction: row;
+align-items: flex-start;
+justify-content: center;
+}
+
+.contentMobile {
+display: block;
+padding-top: 20%;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+}
+
+.report-section .section-title {
+    display: flex;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+    
+.report-section.report-section--minified .section-title {
+    padding-bottom: 4rem;
+}
+.report-section .section-title::after {
+    content: url('assets/images/down-arrow.svg');
+    padding-left: 1rem;
+}
+    
+.report-section.report-section--minified .section-title::after {
+    content: url('assets/images/arrowUp.svg');
+    padding-right: 1rem;
+}
+.report-section.report-section--minified .section-content {
+    display: none;
+}

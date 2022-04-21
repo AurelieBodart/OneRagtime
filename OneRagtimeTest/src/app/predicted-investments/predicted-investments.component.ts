@@ -11,10 +11,16 @@ import { PredictedInvestment } from 'src/models/PredictedInvestment';
 export class PredictedInvestmentsComponent implements OnInit {
 
   public investmentsData: PredictedInvestment[]
+  public title: string;
 
   constructor() { }
 
   ngOnInit(): void {
+    this.title = "Predicted Investments Graph"
+
+    console.log("navigator.userAgent")
+
+    console.log("user" + navigator.userAgent)
 
     this.investmentsData = [
       {
@@ -179,8 +185,9 @@ export class PredictedInvestmentsComponent implements OnInit {
     return this.investmentsData.map((investment: PredictedInvestment) => investment.month)
   }
 
-  private getPercent(): number[] {
-    return this.investmentsData.map((investment: PredictedInvestment) => investment.maxPercent - investment.minPercent)
+  public toogleSection(event: any): void {
+    const section: HTMLElement = event['target']['parentElement']['parentElement']
+    section.classList.toggle('report-section--minified')
   }
 
 }
