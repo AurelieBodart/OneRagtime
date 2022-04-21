@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import * as echarts from 'echarts';
-import { Investment } from 'src/models/Investment';
 import { PredictedInvestment } from 'src/models/PredictedInvestment';
 
 @Component({
@@ -18,10 +17,7 @@ export class PredictedInvestmentsComponent implements OnInit {
   ngOnInit(): void {
     this.title = "Predicted Investments Graph"
 
-    console.log("navigator.userAgent")
-
-    console.log("user" + navigator.userAgent)
-
+    // Data
     this.investmentsData = [
       {
         month: "January",
@@ -55,21 +51,7 @@ export class PredictedInvestmentsComponent implements OnInit {
       width: 600,
       height: 400
     });
-
-
-    // Initialize series data
-    let seriesData = this.investmentsData.map((investment: PredictedInvestment) => {
-      return {
-          value: investment.maxPercent - investment.minPercent,
-          itemStyle: {
-              color: this.getColor(investment.minPercent, investment.maxPercent)
-          },
-          
-      }
-    });
-
-    
-
+  
     let serieDatas = this.getSerieDatas()
 
     // Specify the configuration items and data for the chart
@@ -96,7 +78,6 @@ export class PredictedInvestmentsComponent implements OnInit {
         axisLine: {
           symbol: 'arrow'
         },
-        
       },
       series: [
         {
@@ -142,20 +123,6 @@ export class PredictedInvestmentsComponent implements OnInit {
     myChart.setOption(option);
   }
 
-  private getColor(minPercent: number, maxPercent: number): string {
-    if (maxPercent >= 50) {
-
-      return 'blue';
-    } else {
-      return 'red';
-    }
-
-    if (minPercent - 50 > 0) {
-
-    }
-    //return percent >= 50 ? 'blue' : 'red';
-  }
-
   private getSerieDatas() {
     let serieDataPositivies: number[] = [];
     let serieDataNegatives: number [] = [];
@@ -189,5 +156,4 @@ export class PredictedInvestmentsComponent implements OnInit {
     const section: HTMLElement = event['target']['parentElement']['parentElement']
     section.classList.toggle('report-section--minified')
   }
-
 }

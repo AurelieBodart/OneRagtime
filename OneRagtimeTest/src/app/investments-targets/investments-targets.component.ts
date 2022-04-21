@@ -17,6 +17,7 @@ export class InvestmentsTargetsComponent implements OnInit {
   ngOnInit(): void {
     this.title = "Investments Targets Graph"
 
+    // Data
     this.investmentsData = [
       {
         company: "Cherry Company",
@@ -80,7 +81,10 @@ export class InvestmentsTargetsComponent implements OnInit {
           lineStyle: {
             type: 'solid'
           }
-        }
+        },
+        axisLabel: {
+          formatter: "{value} €"
+        },
       },
       yAxis: {
         type: 'category',

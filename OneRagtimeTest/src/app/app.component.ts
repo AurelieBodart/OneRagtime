@@ -8,8 +8,7 @@ import { DeviceDetectorService } from 'ngx-device-detector';
 })
 export class AppComponent {
   title = 'OneRagtimeTest';
-  constructor(private deviceService: DeviceDetectorService) {
-  }
+  constructor(private deviceService: DeviceDetectorService) {}
 
   ngOnInit() {
     var elem = document.getElementById('graphs')

@@ -3,38 +3,38 @@ body {
 }
 
 h1 {
-margin: 8px 0;
+    margin: 8px 0;
 }
 
 .toolbar {
-height: 100px;
-color: rgb(0, 0, 0);
-font-weight: 600;
-display: flex;
-align-items: center;
-flex-wrap: wrap;
+    height: 100px;
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .toolbar img {
-margin: 0 16px;
-width: 300px;
+    margin: 0 16px;
+    width: 300px;
 }
 
 .contentWeb {
-display: flex;
-margin: 80px auto 30px;
-padding: 10px 20px;
-flex-direction: row;
-align-items: flex-start;
-justify-content: center;
+    display: flex;
+    margin: 80px auto 30px;
+    padding: 10px 20px;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
 }
 
 .contentMobile {
-display: block;
-padding-top: 20%;
-flex-direction: column;
-align-items: center;
-justify-content: center;
+    display: block;
+    padding-top: 20%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .report-section .section-title {
